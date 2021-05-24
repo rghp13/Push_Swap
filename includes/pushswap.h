@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "libft.h"
 
 typedef struct	s_stack
 {
@@ -19,6 +20,6 @@ typedef struct	s_cont
 
 int				ft_pushswap(int argc, char **argv);
 t_cont			*ft_init(int argc, char **argv);
-void			ft_free_exit(t_cont *cont);
+int				ft_free_exit(t_cont *cont);
 
 #endif
