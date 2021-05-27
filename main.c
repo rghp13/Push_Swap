@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:22:26 by romain            #+#    #+#             */
-/*   Updated: 2021/05/24 18:55:48 by romain           ###   ########.fr       */
+/*   Updated: 2021/05/25 00:56:57 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,5 @@
 */
 int main(int argc, char **argv)
 {
-	printf("%d\n", argc);
-	if (argc <= 1)
-		return (printf("ERROR\n"));
-	else if (argc == 2)
-		return (0);
-	ft_pushswap(argc, argv);
-	
+	ft_pushswap(argc, argv);	
 }
