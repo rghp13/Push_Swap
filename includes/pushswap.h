@@ -19,15 +19,15 @@ typedef struct	s_cont
 }				t_cont;
 
 int				ft_pushswap(int argc, char **argv);
-t_cont			*ft_init(int argc, char **argv);
-int				ft_free_exit(t_cont *cont);
+t_cont			*ft_init(int argc);
+void			ft_free_exit(t_cont *cont);
 void			ft_exit(void);
 int				ft_parse(t_cont *cont, char **argv);
 int				ft_check_forbidden(t_cont *cont, char **argv);
 int				ft_check_string(char *str);
 int				ft_check_duplicate(t_cont *cont);
 t_cont			*ft_init_cont(void);
-int				ft_init_values(int argc, char **argv, t_cont *cont);
+int				ft_init_values(int argc, t_cont *cont);
 
 
 #endif

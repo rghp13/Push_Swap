@@ -6,13 +6,13 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 00:57:50 by romain            #+#    #+#             */
-/*   Updated: 2021/05/27 01:07:35 by romain           ###   ########.fr       */
+/*   Updated: 2021/05/27 19:32:16 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	ft_free_exit(t_cont *cont)
+void	ft_free_exit(t_cont *cont)
 {
 	if (cont != NULL)
 	{
