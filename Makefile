@@ -6,7 +6,7 @@
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 03:44:54 by romain            #+#    #+#              #
-#    Updated: 2021/05/27 20:09:07 by romain           ###   ########.fr        #
+#    Updated: 2021/05/27 21:41:18 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,14 +45,12 @@ test:
 				@echo Compiling Testing Program
 				@make -C ${DIR_LIB}
 				@cp ${DIR_LIB}${LIBFT_A} ${LIBFT_A}
-				@cp ${DIR_HEAD}ft_pushswap.h ft_pushswap.h
+				@cp ${DIR_HEAD}pushswap.h pushswap.h
 				@cp ${DIR_HEAD}libft.h libft.h
-				@cp ${DIR_HEAD}ft_push_swap.h ${DIR_SRC}ft_push_swap.h
+				@cp ${DIR_HEAD}pushswap.h ${DIR_SRC}pushswap.h
 				@cp ${DIR_HEAD}libft.h ${DIR_SRC}libft.h
-				gcc -g main.c ${SRCS} ${LIBFT_A}
-				@rm -f ft_push_swap.h libft.h ${DIR_SRC}ft_push_swap.h ${DIR_SRC}libft.h
-				@echo Running Test Program
-				@./a.out
+				gcc -g -I${DIR_HEAD} main.c ${SRCS} ${LIBFT_A}
+				@rm -f pushswap.h libft.h ${DIR_SRC}pushswap.h ${DIR_SRC}libft.h
 
 clean:
 				${RM} ${OBJS}

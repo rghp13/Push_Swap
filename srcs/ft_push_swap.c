@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by romain            #+#    #+#             */
-/*   Updated: 2021/05/27 20:04:16 by romain           ###   ########.fr       */
+/*   Updated: 2021/05/28 00:57:28 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int		ft_pushswap(int argc, char **argv)
 		printf("Position = %d Value = %d\n", i, cont->A->stack[i]);
 		i++;
 	}
-	ft_free_exit(cont);
+	ft_free(cont);
 	return (0);
 }

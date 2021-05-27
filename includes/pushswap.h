@@ -22,6 +22,7 @@ int				ft_pushswap(int argc, char **argv);
 t_cont			*ft_init(int argc);
 void			ft_free_exit(t_cont *cont);
 void			ft_exit(void);
+void			ft_free(t_cont *cont);
 int				ft_parse(t_cont *cont, char **argv);
 int				ft_check_forbidden(t_cont *cont, char **argv);
 int				ft_check_string(char *str);
