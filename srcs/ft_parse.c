@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/05/27 19:58:30 by romain           ###   ########.fr       */
+/*   Updated: 2021/05/28 02:01:23 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_check_duplicate(t_cont *cont)
 	while (i < cont->A->top)
 	{
 		k = i + 1;
-		while(k > cont->A->top)
+		while(k < cont->A->top)
 		{
 			if (cont->A->stack[i] == cont->A->stack[k])
 				ft_free_exit(cont);
