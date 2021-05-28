@@ -29,6 +29,21 @@ int				ft_check_string(char *str);
 int				ft_check_duplicate(t_cont *cont);
 t_cont			*ft_init_cont(void);
 int				ft_init_values(int argc, t_cont *cont);
-
+int				ft_pick_sort(t_cont *cont);
+int				ft_swap(t_stack *stck);
+int				ft_sa(t_cont *cont);
+int				ft_sb(t_cont *cont);
+int				ft_ss(t_cont *cont);
+int				ft_rotate(t_stack *stck);
+int				ft_ra(t_cont *cont);
+int				ft_rb(t_cont *cont);
+int				ft_rr(t_cont *cont);
+int				ft_rrotate(t_stack *stck);
+int				ft_rra(t_cont *cont);
+int				ft_rrb(t_cont *cont);
+int				ft_rrr(t_cont *cont);
+int				ft_push(t_stack *from, t_stack *to);
+int				ft_pa(t_cont *cont);
+int				ft_pb(t_cont *cont);
 
 #endif
