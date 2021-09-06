@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 04:33:52 by romain            #+#    #+#             */
-/*   Updated: 2021/05/28 21:01:47 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/06 22:20:54 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 int	ft_swap(t_stack *stck)
 {
-	int i;
-	int hold;
+	int	i;
+	int	hold;
 
 	i = stck->top;
 	hold = stck->stack[i - 1];
@@ -34,8 +34,8 @@ int	ft_swap(t_stack *stck)
 
 int	ft_rotate(t_stack *stck)
 {
-	int hold;
-	int i;
+	int	hold;
+	int	i;
 
 	i = stck->top - 1;
 	hold = stck->stack[i];
@@ -50,8 +50,8 @@ int	ft_rotate(t_stack *stck)
 
 int	ft_rrotate(t_stack *stck)
 {
-	int hold;
-	int i;
+	int	hold;
+	int	i;
 
 	i = 0;
 	hold = stck->stack[i];

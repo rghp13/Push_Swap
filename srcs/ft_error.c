@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 00:57:50 by romain            #+#    #+#             */
-/*   Updated: 2021/05/27 21:36:23 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/06 22:21:12 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_free_exit(t_cont *cont)
 	ft_free(cont);
 	ft_exit();
 }
+
 void	ft_free(t_cont *cont)
 {
 	if (cont != NULL)

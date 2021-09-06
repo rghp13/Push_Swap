@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by romain            #+#    #+#             */
-/*   Updated: 2021/09/06 16:45:02 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/06 22:23:08 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ t_cont	*ft_init_cont(void)
 	return (container);
 }
 
-int		ft_init_values(int argc, t_cont *cont)
+int	ft_init_values(int argc, t_cont *cont)
 {
 	cont->stack_max = argc - 1;
-	cont->A->stack = malloc(sizeof(int)*(cont->stack_max));
-	cont->B->stack = malloc(sizeof(int)*(cont->stack_max));
+	cont->A->stack = malloc(sizeof(int) * (cont->stack_max));
+	cont->B->stack = malloc(sizeof(int) * (cont->stack_max));
 	if (cont->A->stack == NULL || cont->B->stack == NULL)
 		ft_free_exit(cont);
 	cont->A->top = 0;
@@ -57,7 +57,7 @@ t_cont	*ft_init(int argc)
 	return (container);
 }
 
-int		ft_pick_sort(t_cont *cont)
+int	ft_pick_sort(t_cont *cont)
 {
 	if (cont->stack_max < 3)
 		ft_three_size(cont);
@@ -69,10 +69,10 @@ int		ft_pick_sort(t_cont *cont)
 		ft_five_hun_size(cont);
 }
 
-int		ft_pushswap(int argc, char **argv)
+int	ft_pushswap(int argc, char **argv)
 {
 	t_cont	*cont;
-	int i;
+	int		i;
 
 	i = 0;
 	if (argc <= 1)
