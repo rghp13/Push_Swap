@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/05/28 02:01:23 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/06 16:06:14 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	ft_check_string(char *str)
 	int i;
 
 	i = 1;
-	if (strlen(str) < 1)
+	if (ft_strlen(str) < 1)
 		return (0);
-	if (str[0] != '-' && !ft_isdigit(str[0]))
+	if (!(str[0] == '-' || ft_isdigit(str[0])))
 		return (0);
 	while (str[i])
 	{
