@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:54:10 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/04/20 13:27:23 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/07/09 11:44:30 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # define ASCII 0x30
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -68,7 +68,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *));
 char			*ft_itoa_hex(unsigned long hex);
-char			*ft_utoa(unsigned n);
+char			*ft_utoa(unsigned int n);
 char			*ft_strupcase(char *str);
 
 #endif
