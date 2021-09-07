@@ -45,7 +45,7 @@ int				ft_rrr(t_cont *cont);
 int				ft_push(t_stack *from, t_stack *to);
 int				ft_pa(t_cont *cont);
 int				ft_pb(t_cont *cont);
-int				ft_three_size(t_cont *cont);
+int				ft_three_size(t_stack *cont, t_cont *container);
 int				ft_five_size(t_cont *cont);
 int				ft_one_hun_size(t_cont *cont);
 int				ft_five_hun_size(t_cont *cont);

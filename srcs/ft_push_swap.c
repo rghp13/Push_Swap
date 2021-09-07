@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by romain            #+#    #+#             */
-/*   Updated: 2021/09/06 22:23:08 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/07 14:25:32 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 /*
 **Potentially look into moving all the code from main to this function
 **and move the init function into the parser
+**URGENT
+**the first number in the stack is supposed to be the oldest.start from
+**position max - 1 and not from 0
+** end result should look like 0, 1, 2, 3
 */
 
 t_cont	*ft_init_cont(void)
@@ -59,14 +63,15 @@ t_cont	*ft_init(int argc)
 
 int	ft_pick_sort(t_cont *cont)
 {
-	if (cont->stack_max < 3)
-		ft_three_size(cont);
-	else if (cont->stack_max < 5)
+	if (cont->stack_max == 3)
+		ft_three_size(cont->A, cont);
+/*	else if (cont->stack_max < 5)
 		ft_five_size(cont);
 	else if (cont->stack_max < 100)
 		ft_one_hun_size(cont);
 	else
-		ft_five_hun_size(cont);
+		ft_five_hun_size(cont);*/
+	return (0);
 }
 
 int	ft_pushswap(int argc, char **argv)
