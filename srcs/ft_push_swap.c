@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 21:49:46 by romain            #+#    #+#             */
-/*   Updated: 2021/09/07 14:25:32 by rponsonn         ###   ########.fr       */
+/*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
+/*   Updated: 2021/09/08 19:17:53 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	ft_pick_sort(t_cont *cont)
 {
 	if (cont->stack_max == 3)
 		ft_three_size(cont->A, cont);
-/*	else if (cont->stack_max < 5)
+	else if (cont->stack_max < 5)
 		ft_five_size(cont);
-	else if (cont->stack_max < 100)
+/*	else if (cont->stack_max < 100)
 		ft_one_hun_size(cont);
 	else
 		ft_five_hun_size(cont);*/
@@ -86,12 +86,12 @@ int	ft_pushswap(int argc, char **argv)
 		return (0);
 	cont = ft_init(argc);
 	ft_parse(cont, argv);
+	ft_pick_sort(cont);
 	while (i < cont->A->top)
 	{
 		printf("Position = %d Value = %d\n", i, cont->A->stack[i]);
 		i++;
 	}
-	ft_pick_sort(cont);
 	ft_free(cont);
 	return (0);
 }
