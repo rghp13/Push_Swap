@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pushswap.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
+/*   Updated: 2021/09/09 14:50:02 by rponsonn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "libft.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include "libft.h"
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int	*stack;
 	int	top;
 }				t_stack;
-typedef struct	s_cont
+typedef struct s_cont
 {
-	t_stack *A;
-	t_stack *B;
-	int stack_max;
+	t_stack	*A;
+	t_stack	*B;
+	int		stack_max;
 }				t_cont;
 
 int				ft_pushswap(int argc, char **argv);
@@ -49,5 +61,6 @@ int				ft_three_size(t_stack *cont, t_cont *container);
 int				ft_five_size(t_cont *cont);
 int				ft_one_hun_size(t_cont *cont);
 int				ft_five_hun_size(t_cont *cont);
+int				ft_find_biggest(t_stack *stack);
 
 #endif

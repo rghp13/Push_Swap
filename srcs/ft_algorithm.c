@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/08 19:18:07 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:29:00 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,20 @@ int	ft_push_three(t_cont *cont)
 	int push;
 	while (cont->A->top > 3)
 	{
-		push = ft_find_smallest(cont->A);//returns with position in stack for smallest
+		push = ft_find_biggest(cont->A);
 		while (push < cont->A->top - 1)
 		{
-			if ()//figure out which way to rotate
+			if (push == cont->A->top - 2)
+				ft_sa(cont);
+			else if (push == 0 || push == 1)
+				ft_rra(cont);
+			else
+				ft_ra(cont);
+			push = ft_find_biggest(cont->A);
 		}
+		ft_pb(cont);
 	}
+	return (0);
 }
 
 int	ft_five_size(t_cont *cont)
@@ -67,4 +75,8 @@ int	ft_five_size(t_cont *cont)
 	max = cont->stack_max;
 	stack = cont->A->stack;
 	ft_push_three(cont);
+	ft_three_size(cont->A, cont);
+	while (cont->B->top > 0)
+		ft_pa(cont);
+	return (0);
 }

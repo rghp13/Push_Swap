@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/08 19:17:53 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:10:15 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_pick_sort(t_cont *cont)
 {
 	if (cont->stack_max == 3)
 		ft_three_size(cont->A, cont);
-	else if (cont->stack_max < 5)
+	else if (cont->stack_max <= 5)
 		ft_five_size(cont);
 /*	else if (cont->stack_max < 100)
 		ft_one_hun_size(cont);

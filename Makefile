@@ -6,7 +6,7 @@
 #    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 03:44:54 by romain            #+#    #+#              #
-#    Updated: 2021/09/07 13:00:35 by rponsonn         ###   ########.fr        #
+#    Updated: 2021/09/09 14:38:15 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ DIR_LIB		=	libft/
 DIR_OBJ		=	obj/
 
 SRCS		=	${DIR_SRC}ft_error.c ${DIR_SRC}ft_parse.c ${DIR_SRC}ft_push_swap.c ${DIR_SRC}ft_command.c \
-				${DIR_SRC}ft_pre_command.c ${DIR_SRC}ft_pre_command2.c ${DIR_SRC}ft_algorithm.c
+				${DIR_SRC}ft_pre_command.c ${DIR_SRC}ft_pre_command2.c ${DIR_SRC}ft_algorithm.c \
+				${DIR_SRC}ft_utilities.c
 
 OBJS		=	${SRCS:.c=.o}
 
