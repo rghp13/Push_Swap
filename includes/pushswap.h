@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/09 14:50:02 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:56:40 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,21 @@ typedef struct s_cont
 	t_stack	*A;
 	t_stack	*B;
 	int		stack_max;
+	char	**separated;
 }				t_cont;
 
 int				ft_pushswap(int argc, char **argv);
-t_cont			*ft_init(int argc);
+t_cont			*ft_init(int argc, char ** separated);
 void			ft_free_exit(t_cont *cont);
 void			ft_exit(void);
 void			ft_free(t_cont *cont);
 int				ft_parse(t_cont *cont, char **argv);
+int				ft_sep_parse(t_cont *cont, char **separated);
 int				ft_check_forbidden(t_cont *cont, char **argv);
+int				ft_sep_check_forbidden(t_cont *cont, char **argv);
 int				ft_check_string(char *str);
 int				ft_check_duplicate(t_cont *cont);
-t_cont			*ft_init_cont(void);
+t_cont			*ft_init_cont(char **separated);
 int				ft_init_values(int argc, t_cont *cont);
 int				ft_pick_sort(t_cont *cont);
 int				ft_swap(t_stack *stck);

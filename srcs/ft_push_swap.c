@@ -6,22 +6,22 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/09 15:10:15 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:55:01 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
 /*
-**Potentially look into moving all the code from main to this function
-**and move the init function into the parser
+**Rework parse to deal with 1 "2 3 4" 5 you can't rely on argc
+**
 **URGENT
 **the first number in the stack is supposed to be the oldest.start from
 **position max - 1 and not from 0
 ** end result should look like 0, 1, 2, 3
 */
 
-t_cont	*ft_init_cont(void)
+t_cont	*ft_init_cont(char **separated)
 {
 	t_cont	*container;
 
@@ -37,6 +37,7 @@ t_cont	*ft_init_cont(void)
 		ft_free_exit(container);
 	container->A->stack = NULL;
 	container->B->stack = NULL;
+	container->separated = separated;
 	return (container);
 }
 
@@ -52,11 +53,11 @@ int	ft_init_values(int argc, t_cont *cont)
 	return (0);
 }
 
-t_cont	*ft_init(int argc)
+t_cont	*ft_init(int argc, char **separated)
 {
 	t_cont	*container;
 
-	container = ft_init_cont();
+	container = ft_init_cont(separated);
 	ft_init_values(argc, container);
 	return (container);
 }
@@ -77,21 +78,27 @@ int	ft_pick_sort(t_cont *cont)
 int	ft_pushswap(int argc, char **argv)
 {
 	t_cont	*cont;
+	char	**separated_input;
 	int		i;
 
 	i = 0;
+	separated_input = NULL;
 	if (argc <= 1)
 		ft_exit();
 	else if (argc == 2)
-		return (0);
-	cont = ft_init(argc);
-	ft_parse(cont, argv);
-	ft_pick_sort(cont);
-	while (i < cont->A->top)
 	{
-		printf("Position = %d Value = %d\n", i, cont->A->stack[i]);
-		i++;
+		separated_input = ft_split(argv[1], ' ');
+		while (separated_input[i])
+			i++;
+		cont = ft_init(i + 1, separated_input);
+		ft_sep_parse(cont, separated_input);
 	}
+	else
+	{
+		cont = ft_init(argc, separated_input);
+		ft_parse(cont, argv);
+	}
+	ft_pick_sort(cont);
 	ft_free(cont);
 	return (0);
 }
