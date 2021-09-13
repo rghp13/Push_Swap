@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 00:57:50 by romain            #+#    #+#             */
-/*   Updated: 2021/09/13 16:53:19 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:30:36 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ void	ft_free_exit(t_cont *cont)
 
 void	ft_free(t_cont *cont)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (cont != NULL)
 	{
-		if (cont->A != NULL)
+		if (cont->a != NULL)
 		{
-			if (cont->A->stack != NULL)
-				free(cont->A->stack);
-			free(cont->A);
+			if (cont->a->stack != NULL)
+				free(cont->a->stack);
+			free(cont->a);
 		}
-		if (cont->B != NULL)
+		if (cont->b != NULL)
 		{
-			if (cont->B->stack != NULL)
-				free(cont->B->stack);
-			free(cont->B);
+			if (cont->b->stack != NULL)
+				free(cont->b->stack);
+			free(cont->b);
 		}
 		if (cont->separated != NULL)
 		{

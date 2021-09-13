@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_command.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 04:33:52 by romain            #+#    #+#             */
-/*   Updated: 2021/09/09 15:35:36 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:30:48 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_rrotate(t_stack *stck)
 
 	i = 0;
 	hold = stck->stack[i];
-	while (i < stck->top - 1)//double check that this works
+	while (i < stck->top - 1)
 	{
 		stck->stack[i] = stck->stack[i + 1];
 		i++;
@@ -76,7 +76,7 @@ int	ft_push(t_stack *from, t_stack *to)
 
 int	ft_pb(t_cont *cont)
 {
-	if (ft_push(cont->A, cont->B) == 0)
+	if (ft_push(cont->a, cont->b) == 0)
 		printf("pb\n");
 	else
 		printf("ERROR: Pushed B with an empty stack\n");

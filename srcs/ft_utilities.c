@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utilities.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/09 15:14:02 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:27:50 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_find_biggest(t_stack *stack)
 {
-	int i;
-	int biggest;
-	int position;
+	int	i;
+	int	biggest;
+	int	position;
 
 	i = 0;
 	position = 0;
@@ -31,4 +31,22 @@ int	ft_find_biggest(t_stack *stack)
 		i++;
 	}
 	return (position);
+}
+
+int	ft_sep_parse(t_cont *cont, char **separated)
+{
+	int	i;
+	int	k;
+
+	i = 0;
+	k = 0;
+	ft_sep_check_forbidden(cont, separated);
+	while (i < cont->stack_max)
+	{
+		cont->a->stack[k] = ft_atoi(separated[i]);
+		i++;
+		cont->a->top = ++k;
+	}
+	ft_check_duplicate(cont);
+	return (0);
 }

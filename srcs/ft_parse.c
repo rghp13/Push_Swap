@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/09/13 17:13:00 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:29:58 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ int	ft_check_duplicate(t_cont *cont)
 	int	k;
 
 	i = 0;
-	while (i < cont->A->top)
+	while (i < cont->a->top)
 	{
 		k = i + 1;
-		while (k < cont->A->top)
+		while (k < cont->a->top)
 		{
-			if (cont->A->stack[i] == cont->A->stack[k])
+			if (cont->a->stack[i] == cont->a->stack[k])
 				ft_free_exit(cont);
 			k++;
 		}
@@ -93,26 +93,9 @@ int	ft_parse(t_cont *cont, char **argv)
 	ft_check_forbidden(cont, argv);
 	while (i <= cont->stack_max)
 	{
-		cont->A->stack[k] = ft_atoi(argv[i]);
+		cont->a->stack[k] = ft_atoi(argv[i]);
 		i++;
-		cont->A->top = ++k;
-	}
-	ft_check_duplicate(cont);
-	return (0);
-}
-int	ft_sep_parse(t_cont *cont, char **separated)
-{
-	int	i;
-	int	k;
-
-	i = 0;
-	k = 0;
-	ft_sep_check_forbidden(cont, separated);
-	while (i < cont->stack_max)
-	{
-		cont->A->stack[k] = ft_atoi(separated[i]);
-		i++;
-		cont->A->top = ++k;
+		cont->a->top = ++k;
 	}
 	ft_check_duplicate(cont);
 	return (0);

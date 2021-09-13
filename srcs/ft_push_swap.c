@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 16:55:01 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:27:32 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ t_cont	*ft_init_cont(char **separated)
 	container = malloc(sizeof(t_cont));
 	if (container == NULL)
 		ft_exit();
-	container->A = NULL;
-	container->B = NULL;
-	container->A = malloc(sizeof(t_stack));
-	container->B = malloc(sizeof(t_stack));
-	if (container->A == NULL || container->B == NULL)
+	container->a = NULL;
+	container->b = NULL;
+	container->a = malloc(sizeof(t_stack));
+	container->b = malloc(sizeof(t_stack));
+	if (container->a == NULL || container->b == NULL)
 		ft_free_exit(container);
-	container->A->stack = NULL;
-	container->B->stack = NULL;
+	container->a->stack = NULL;
+	container->b->stack = NULL;
 	container->separated = separated;
 	return (container);
 }
@@ -44,12 +44,12 @@ t_cont	*ft_init_cont(char **separated)
 int	ft_init_values(int argc, t_cont *cont)
 {
 	cont->stack_max = argc - 1;
-	cont->A->stack = malloc(sizeof(int) * (cont->stack_max));
-	cont->B->stack = malloc(sizeof(int) * (cont->stack_max));
-	if (cont->A->stack == NULL || cont->B->stack == NULL)
+	cont->a->stack = malloc(sizeof(int) * (cont->stack_max));
+	cont->b->stack = malloc(sizeof(int) * (cont->stack_max));
+	if (cont->a->stack == NULL || cont->b->stack == NULL)
 		ft_free_exit(cont);
-	cont->A->top = 0;
-	cont->B->top = 0;
+	cont->a->top = 0;
+	cont->b->top = 0;
 	return (0);
 }
 
@@ -65,7 +65,7 @@ t_cont	*ft_init(int argc, char **separated)
 int	ft_pick_sort(t_cont *cont)
 {
 	if (cont->stack_max == 3)
-		ft_three_size(cont->A, cont);
+		ft_three_size(cont->a, cont);
 	else if (cont->stack_max <= 5)
 		ft_five_size(cont);
 /*	else if (cont->stack_max < 100)

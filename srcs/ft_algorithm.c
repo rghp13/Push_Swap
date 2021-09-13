@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/09 15:29:00 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:31:18 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,20 @@ int	ft_three_size(t_stack *cont, t_cont *container)
 
 int	ft_push_three(t_cont *cont)
 {
-	int push;
-	while (cont->A->top > 3)
+	int	push;
+
+	while (cont->a->top > 3)
 	{
-		push = ft_find_biggest(cont->A);
-		while (push < cont->A->top - 1)
+		push = ft_find_biggest(cont->a);
+		while (push < cont->a->top - 1)
 		{
-			if (push == cont->A->top - 2)
+			if (push == cont->a->top - 2)
 				ft_sa(cont);
 			else if (push == 0 || push == 1)
 				ft_rra(cont);
 			else
 				ft_ra(cont);
-			push = ft_find_biggest(cont->A);
+			push = ft_find_biggest(cont->a);
 		}
 		ft_pb(cont);
 	}
@@ -73,10 +74,10 @@ int	ft_five_size(t_cont *cont)
 	int	*stack;
 
 	max = cont->stack_max;
-	stack = cont->A->stack;
+	stack = cont->a->stack;
 	ft_push_three(cont);
-	ft_three_size(cont->A, cont);
-	while (cont->B->top > 0)
+	ft_three_size(cont->a, cont);
+	while (cont->b->top > 0)
 		ft_pa(cont);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 16:56:40 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:25:42 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ typedef struct s_stack
 }				t_stack;
 typedef struct s_cont
 {
-	t_stack	*A;
-	t_stack	*B;
+	t_stack	*a;
+	t_stack	*b;
 	int		stack_max;
 	char	**separated;
 }				t_cont;
 
 int				ft_pushswap(int argc, char **argv);
-t_cont			*ft_init(int argc, char ** separated);
+t_cont			*ft_init(int argc, char **separated);
 void			ft_free_exit(t_cont *cont);
 void			ft_exit(void);
 void			ft_free(t_cont *cont);
