@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utilities.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 23:27:50 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:27:13 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,63 @@ int	ft_sep_parse(t_cont *cont, char **separated)
 		cont->a->top = ++k;
 	}
 	ft_check_duplicate(cont);
+	return (0);
+}
+
+int	ft_set_duplicate(int *duplicate, int max)
+{
+	int i;
+
+	i = 0;
+	while (i < max)
+	{
+		duplicate[i] = -1;
+		i++;
+	}
+	return (0);
+}
+
+int	ft_find_missing(int *duplicate, int max)
+{
+	int i;
+	int ret;
+
+	i = 0;
+	ret = -1;
+	while (i < max)
+	{
+		if (duplicate[i] == -1)
+		{
+			if (ret == -1)
+				ret = i;
+			else
+			{
+				printf("ERROR: More than 1 missing number from ft_make_relative");
+				return (-1);
+			}
+		}
+		i++;
+	}
+	return (ret);
+}
+
+int	ft_array_swap(t_stack *a, int *duplicate)
+{
+	free(a->stack);
+	a->stack = duplicate;
+	return (0);
+}
+
+int	ft_check_sorted(t_cont *cont)//if sorted return 0, if not return 1
+{
+	int i;
+
+	i = 0;
+	while (i < cont->a->top - 1)
+	{
+		if (cont->a->stack[i] > cont->a->stack[i + 1])
+			return (1);
+		i++;
+	}
 	return (0);
 }

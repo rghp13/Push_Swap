@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 23:27:32 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:25:35 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ t_cont	*ft_init(int argc, char **separated)
 
 int	ft_pick_sort(t_cont *cont)
 {
+	if (ft_check_sorted(cont) == 0)
+		return (0);
 	if (cont->stack_max == 3)
 		ft_three_size(cont->a, cont);
 	else if (cont->stack_max <= 5)
@@ -85,7 +87,7 @@ int	ft_pushswap(int argc, char **argv)
 	separated_input = NULL;
 	if (argc <= 1)
 		ft_exit();
-	else if (argc == 2)
+	else if (argc == 2)//put this in a function to save lines
 	{
 		separated_input = ft_split(argv[1], ' ');
 		while (separated_input[i])
@@ -98,6 +100,8 @@ int	ft_pushswap(int argc, char **argv)
 		cont = ft_init(argc, separated_input);
 		ft_parse(cont, argv);
 	}
+	if (ft_make_relative(cont->a, cont->stack_max) == -1)
+		ft_free_exit(cont);
 	ft_pick_sort(cont);
 	ft_free(cont);
 	return (0);
