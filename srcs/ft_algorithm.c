@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 23:31:18 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/15 17:43:51 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,42 @@ int	ft_push_three(t_cont *cont)
 			push = ft_find_biggest(cont->a);
 		}
 		ft_pb(cont);
+	}
+	return (0);
+}
+
+int	ft_one_hun_size(t_cont *cont)
+{
+	unsigned int	mask;
+	int				i;
+
+	mask = 1;
+	i = 0;
+	while()//make external loop think about how to stop loop when there are no more relevant bits at the position
+	while (cont->a->top > 0 && ft_check_bit(cont->a, mask))
+	{
+		if (cont->a->stack[cont->a->top - 1] & mask)
+			ft_pb(cont);
+		else
+			ft_ra(cont);
+		i++;
+	}
+}
+
+/*
+**possible bug, what if there's a bit where every entry has a 1 at that spot?
+*/
+
+int	ft_check_bit(t_stack *a, unsigned int mask)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->top)
+	{
+		if (a->stack[i] & mask)
+			return (1);
+		i++;
 	}
 	return (0);
 }

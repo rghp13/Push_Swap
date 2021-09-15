@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_make_relative.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 12:38:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/14 16:00:06 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:25:03 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 
 int	ft_find_smallest(t_stack *a, int max)
 {
-	int sval;
-	int spos;
-	int i;
+	int	sval;
+	int	spos;
+	int	i;
 
 	i = 0;
 	spos = -1;
@@ -47,8 +47,8 @@ int	ft_find_smallest(t_stack *a, int max)
 int	ft_make_relative(t_stack *a, int max)
 {
 	int	*duplicate;
-	int i;
-	int k;
+	int	i;
+	int	k;
 
 	k = 0;
 	duplicate = malloc(sizeof(int) * max);

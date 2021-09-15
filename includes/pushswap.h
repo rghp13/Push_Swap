@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/13 23:25:42 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/15 16:10:33 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,11 @@ int				ft_five_size(t_cont *cont);
 int				ft_one_hun_size(t_cont *cont);
 int				ft_five_hun_size(t_cont *cont);
 int				ft_find_biggest(t_stack *stack);
+int				ft_check_sorted(t_cont *cont);
+int				ft_make_relative(t_stack *a, int max);
+int				ft_find_smallest(t_stack *a, int max);
+int				ft_set_duplicate(int *duplicate, int max);
+int				ft_find_missing(int *duplicate, int max);
+int				ft_array_swap(t_stack *a, int *duplicate);
 
 #endif

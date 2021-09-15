@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utilities.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/14 16:27:13 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:26:21 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_sep_parse(t_cont *cont, char **separated)
 
 int	ft_set_duplicate(int *duplicate, int max)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < max)
@@ -66,8 +66,8 @@ int	ft_set_duplicate(int *duplicate, int max)
 
 int	ft_find_missing(int *duplicate, int max)
 {
-	int i;
-	int ret;
+	int	i;
+	int	ret;
 
 	i = 0;
 	ret = -1;
@@ -79,7 +79,7 @@ int	ft_find_missing(int *duplicate, int max)
 				ret = i;
 			else
 			{
-				printf("ERROR: More than 1 missing number from ft_make_relative");
+				printf("ERROR: More than 1 missing number ft_make_relative");
 				return (-1);
 			}
 		}
@@ -97,7 +97,7 @@ int	ft_array_swap(t_stack *a, int *duplicate)
 
 int	ft_check_sorted(t_cont *cont)//if sorted return 0, if not return 1
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < cont->a->top - 1)
