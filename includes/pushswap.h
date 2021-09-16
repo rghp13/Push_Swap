@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/15 16:10:33 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/16 14:14:01 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ int				ft_find_smallest(t_stack *a, int max);
 int				ft_set_duplicate(int *duplicate, int max);
 int				ft_find_missing(int *duplicate, int max);
 int				ft_array_swap(t_stack *a, int *duplicate);
+int				ft_check_bit(t_stack *a, unsigned int mask);
+int				ft_check_zero_bit(t_stack *a, unsigned int mask);
+
 
 #endif

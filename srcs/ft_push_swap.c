@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/15 17:44:02 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/16 17:21:10 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	ft_pushswap(int argc, char **argv)
 
 	i = 0;
 	separated_input = NULL;
+	printf("%s\n", argv[1]);
 	if (argc <= 1)
 		ft_exit();
 	else if (argc == 2)//put this in a function to save lines
@@ -103,7 +104,6 @@ int	ft_pushswap(int argc, char **argv)
 	if (ft_make_relative(cont->a, cont->stack_max) == -1)
 		ft_free_exit(cont);
 	ft_pick_sort(cont);
-	printf("%d at position 0", cont->a->stack[0]);
 	ft_free(cont);
 	return (0);
 }
