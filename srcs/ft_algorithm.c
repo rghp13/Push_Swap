@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/16 17:13:44 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/17 16:54:12 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,29 +71,55 @@ int	ft_push_three(t_cont *cont)
 int	ft_one_hun_size(t_cont *cont)
 {
 	unsigned int	mask;
-	int				i;
+	int				pos;
 
 	mask = 1;
-	i = 0;
-	while(mask)//make external loop think about how to stop loop when there are no more relevant bits at the position
+	while(mask)
 	{
 		if (ft_check_zero_bit(cont->a, mask))//all 1 or all 0
 		{
 			mask = mask << 1;
 			continue;
 		}
-		while (cont->a->top > 0 && ft_check_bit(cont->a, mask))
+		pos = -1;
+		while (cont->a->top > 0 && ft_check_bit(cont->a, mask))//is there a 1?
 		{
 			if (cont->a->stack[cont->a->top - 1] & mask)
 				ft_pb(cont);
 			else
-				ft_ra(cont);
-			i++;
+				ft_save_plus_rotate(cont, &pos);
 		}
+		ft_calc_rr_dir(cont, pos);
 		while (cont->b->top > 0)//now push it all back
 			ft_pa(cont);
 		mask = mask << 1;
 	}
+	return (0);
+}
+
+int	ft_calc_rr_dir(t_cont *cont, int pos)//see which way is the optimal way to rotate and then do so until it's at the top
+{
+	int i;
+
+	i = 0;
+	while (cont->a->stack[i] != pos)
+		i++;
+	if ((cont->a->top - 1) - i < i)//if it's closer to the top of the stack
+	{
+		while (cont->a->stack[cont->a->top - 1] != pos)
+			ft_ra(cont);
+	}
+	else
+		ft_rra(cont);
+	return (0);
+}
+
+
+int	ft_save_plus_rotate(t_cont *cont, int *pos)
+{
+	if (*pos == -1)
+		*pos = cont->a->stack[cont->a->top - 1];
+	ft_ra(cont);
 	return (0);
 }
 
@@ -104,8 +130,6 @@ int	ft_one_hun_size(t_cont *cont)
 int	ft_check_zero_bit(t_stack *a, unsigned int mask)//check for all 0 or 1
 {
 	int	i;
-	int l1;
-	int l2;
 
 	i = 0;
 	while (i < a->top)

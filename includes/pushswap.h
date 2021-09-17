@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/16 14:14:01 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/17 15:21:34 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int				ft_find_missing(int *duplicate, int max);
 int				ft_array_swap(t_stack *a, int *duplicate);
 int				ft_check_bit(t_stack *a, unsigned int mask);
 int				ft_check_zero_bit(t_stack *a, unsigned int mask);
+int				ft_save_plus_rotate(t_cont *cont, int *pos);
+int				ft_calc_rr_dir(t_cont *cont, int pos);
 
 
 #endif

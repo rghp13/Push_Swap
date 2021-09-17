@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/16 17:21:10 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/17 16:39:40 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_cont	*ft_init_cont(char **separated)
 	container->a = malloc(sizeof(t_stack));
 	container->b = malloc(sizeof(t_stack));
 	if (container->a == NULL || container->b == NULL)
-		ft_free_exit(container);
+		ft_free_exit(container);//leak for not including separated
 	container->a->stack = NULL;
 	container->b->stack = NULL;
 	container->separated = separated;
@@ -70,10 +70,12 @@ int	ft_pick_sort(t_cont *cont)
 		ft_three_size(cont->a, cont);
 	else if (cont->stack_max <= 5)
 		ft_five_size(cont);
-	else if (cont->stack_max < 100)
+	else if (cont->stack_max <= 100)
 		ft_one_hun_size(cont);
 /*	else
 		ft_five_hun_size(cont);*/
+	if (ft_check_sorted(cont) == 1)
+		printf("Failed to sort properly\n");
 	return (0);
 }
 
@@ -84,13 +86,13 @@ int	ft_pushswap(int argc, char **argv)
 	int		i;
 
 	i = 0;
+	cont = NULL;
 	separated_input = NULL;
-	printf("%s\n", argv[1]);
 	if (argc <= 1)
 		ft_exit();
 	else if (argc == 2)//put this in a function to save lines
 	{
-		separated_input = ft_split(argv[1], ' ');
+		separated_input = ft_split(argv[1], ' ');//forgot to test for null
 		while (separated_input[i])
 			i++;
 		cont = ft_init(i + 1, separated_input);
@@ -101,9 +103,12 @@ int	ft_pushswap(int argc, char **argv)
 		cont = ft_init(argc, separated_input);
 		ft_parse(cont, argv);
 	}
-	if (ft_make_relative(cont->a, cont->stack_max) == -1)
-		ft_free_exit(cont);
+	//if (ft_make_relative(cont->a, cont->stack_max) == -1)
+	//	ft_free_exit(cont);
+
 	ft_pick_sort(cont);
+//	for (int x = 0; x < cont->a->top; x++)
+//		printf("Value %d at position %d\n", cont->a->stack[x], x);
 	ft_free(cont);
 	return (0);
 }

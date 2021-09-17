@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pre_command.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 20:12:31 by romain            #+#    #+#             */
-/*   Updated: 2021/09/13 23:29:27 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/17 16:31:43 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_ss(t_cont *cont)
 {
 	ft_swap(cont->a);
 	ft_swap(cont->b);
-	printf("ss");
+	printf("ss\n");
 	return (0);
 }
 
