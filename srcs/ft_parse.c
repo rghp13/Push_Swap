@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/09/13 23:29:58 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/20 19:21:10 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,14 @@ int	ft_parse(t_cont *cont, char **argv)
 	int	k;
 
 	i = 1;
-	k = 0;
+	k = cont->stack_max - 1;
 	ft_check_forbidden(cont, argv);
 	while (i <= cont->stack_max)
 	{
 		cont->a->stack[k] = ft_atoi(argv[i]);
 		i++;
-		cont->a->top = ++k;
+		cont->a->top += 1;
+		--k;
 	}
 	ft_check_duplicate(cont);
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utilities.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/14 18:26:21 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/20 19:20:28 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ int	ft_sep_parse(t_cont *cont, char **separated)
 	int	k;
 
 	i = 0;
-	k = 0;
+	k = cont->stack_max - 1;
 	ft_sep_check_forbidden(cont, separated);
 	while (i < cont->stack_max)
 	{
 		cont->a->stack[k] = ft_atoi(separated[i]);
 		i++;
-		cont->a->top = ++k;
+		cont->a->top += 1;
+		--k;
 	}
 	ft_check_duplicate(cont);
 	return (0);

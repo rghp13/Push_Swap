@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/17 16:39:40 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/20 19:43:14 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_pick_sort(t_cont *cont)
 		ft_three_size(cont->a, cont);
 	else if (cont->stack_max <= 5)
 		ft_five_size(cont);
-	else if (cont->stack_max <= 100)
+	else if (cont->stack_max <= 500)
 		ft_one_hun_size(cont);
 /*	else
 		ft_five_hun_size(cont);*/
@@ -103,6 +103,8 @@ int	ft_pushswap(int argc, char **argv)
 		cont = ft_init(argc, separated_input);
 		ft_parse(cont, argv);
 	}
+//	for ( int y = 0; y < cont->a->top; y++)
+//		printf("P %d, V %d\n", y, cont->a->stack[y]);
 	//if (ft_make_relative(cont->a, cont->stack_max) == -1)
 	//	ft_free_exit(cont);
 

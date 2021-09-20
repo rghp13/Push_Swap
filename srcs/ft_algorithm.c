@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/17 16:54:12 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/20 15:42:17 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,10 @@ int	ft_calc_rr_dir(t_cont *cont, int pos)//see which way is the optimal way to r
 			ft_ra(cont);
 	}
 	else
-		ft_rra(cont);
+	{
+		while (cont->a->stack[cont->a->top - 1] != pos)
+			ft_rra(cont);
+	}
 	return (0);
 }
 
