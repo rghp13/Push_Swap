@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/17 15:21:34 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/21 18:13:58 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_cont
 
 int				ft_pushswap(int argc, char **argv);
 t_cont			*ft_init(int argc, char **separated);
-void			ft_free_exit(t_cont *cont);
+int				ft_free_exit(t_cont *cont);
 void			ft_exit(void);
 void			ft_free(t_cont *cont);
 int				ft_parse(t_cont *cont, char **argv);
@@ -64,7 +64,7 @@ int				ft_three_size(t_stack *cont, t_cont *container);
 int				ft_five_size(t_cont *cont);
 int				ft_one_hun_size(t_cont *cont);
 int				ft_five_hun_size(t_cont *cont);
-int				ft_find_biggest(t_stack *stack);
+int				ft_find_small(t_stack *stack);
 int				ft_check_sorted(t_cont *cont);
 int				ft_make_relative(t_stack *a, int max);
 int				ft_find_smallest(t_stack *a, int max);
@@ -75,6 +75,7 @@ int				ft_check_bit(t_stack *a, unsigned int mask);
 int				ft_check_zero_bit(t_stack *a, unsigned int mask);
 int				ft_save_plus_rotate(t_cont *cont, int *pos);
 int				ft_calc_rr_dir(t_cont *cont, int pos);
+t_cont			*ft_sep_handler(char **separated_input, char **argv);
 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_make_relative.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 12:38:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/14 18:25:03 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/21 14:11:30 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_make_relative(t_stack *a, int max)
 	k = 0;
 	duplicate = malloc(sizeof(int) * max);
 	if (duplicate == NULL)
-		return (-1);
+		return (1);
 	ft_set_duplicate(duplicate, max);
 	while (k < max)
 	{
@@ -64,7 +64,7 @@ int	ft_make_relative(t_stack *a, int max)
 			if (i == -1)
 			{
 				free(duplicate);
-				return (-1);
+				return (1);
 			}
 		}
 		duplicate[i] = k++;

@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/21 12:44:35 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/21 18:12:04 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ int	ft_three_size(t_stack *cont, t_cont *container)
 	int	max;
 
 	max = cont->top - 1;
-	if (cont->stack[max] < cont->stack[max - 1] && cont->stack[max] < \
+	if (cont->stack[max] > cont->stack[max - 1] && cont->stack[max] > \
 	cont->stack[max - 2])
 	{
 		ft_ra(container);
-		if (cont->stack[max] < cont->stack[max - 1])
+		if (cont->stack[max] > cont->stack[max - 1])
 			ft_sa(container);
 	}
-	else if (cont->stack[max - 1] < cont->stack[max] && cont->stack[max - 1] < \
+	else if (cont->stack[max - 1] > cont->stack[max] && cont->stack[max - 1] > \
 	cont->stack[max - 2])
 	{
 		ft_rra(container);
-		if (cont->stack[max] < cont->stack[max - 1])
+		if (cont->stack[max] > cont->stack[max - 1])
 			ft_sa(container);
 	}
-	else if (cont->stack[max - 2] < cont->stack[max] && cont->stack[max - 2] < \
+	else if (cont->stack[max - 2] > cont->stack[max] && cont->stack[max - 2] > \
 	cont->stack[max - 1])
 	{
-		if (cont->stack[max] < cont->stack[max - 1])
+		if (cont->stack[max] > cont->stack[max - 1])
 			ft_sa(container);
 	}
 	return (0);
@@ -52,7 +52,7 @@ int	ft_push_three(t_cont *cont)
 
 	while (cont->a->top > 3)
 	{
-		push = ft_find_biggest(cont->a);
+		push = ft_find_small(cont->a);
 		while (push < cont->a->top - 1)
 		{
 			if (push == cont->a->top - 2)
@@ -61,7 +61,7 @@ int	ft_push_three(t_cont *cont)
 				ft_rra(cont);
 			else
 				ft_ra(cont);
-			push = ft_find_biggest(cont->a);
+			push = ft_find_small(cont->a);
 		}
 		ft_pb(cont);
 	}

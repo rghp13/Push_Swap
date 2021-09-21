@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 00:57:50 by romain            #+#    #+#             */
-/*   Updated: 2021/09/13 23:30:36 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/21 14:13:05 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	ft_free_exit(t_cont *cont)
+int	ft_free_exit(t_cont *cont)
 {
 	ft_free(cont);
 	ft_exit();
+	return (0);
 }
 
 void	ft_free(t_cont *cont)
