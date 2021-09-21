@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:20:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/20 15:42:17 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:44:35 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ int	ft_one_hun_size(t_cont *cont)
 			continue;
 		}
 		pos = -1;
-		while (cont->a->top > 0 && ft_check_bit(cont->a, mask))//is there a 1?
+		while (cont->a->top > 0 && ft_check_bit(cont->a, mask))//is there a 0?
 		{
-			if (cont->a->stack[cont->a->top - 1] & mask)
+			if ((cont->a->stack[cont->a->top - 1] & mask) == 0)
 				ft_pb(cont);
 			else
 				ft_save_plus_rotate(cont, &pos);
@@ -118,7 +118,7 @@ int	ft_calc_rr_dir(t_cont *cont, int pos)//see which way is the optimal way to r
 }
 
 
-int	ft_save_plus_rotate(t_cont *cont, int *pos)
+int	ft_save_plus_rotate(t_cont *cont, int *pos)//save pos of first 1
 {
 	if (*pos == -1)
 		*pos = cont->a->stack[cont->a->top - 1];
@@ -157,14 +157,14 @@ int	ft_check_zero_bit(t_stack *a, unsigned int mask)//check for all 0 or 1
 	return (0);
 }
 
-int	ft_check_bit(t_stack *a, unsigned int mask)//check for any 1
+int	ft_check_bit(t_stack *a, unsigned int mask)//check for any 0
 {
 	int	i;
 
 	i = 0;
 	while (i < a->top)
 	{
-		if (a->stack[i] & mask)
+		if ((a->stack[i] & mask) == 0)
 			return (1);
 		i++;
 	}

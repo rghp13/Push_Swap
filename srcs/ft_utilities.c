@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/20 19:20:28 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:48:46 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	ft_check_sorted(t_cont *cont)//if sorted return 0, if not return 1
 	i = 0;
 	while (i < cont->a->top - 1)
 	{
-		if (cont->a->stack[i] > cont->a->stack[i + 1])
+		if (cont->a->stack[i] < cont->a->stack[i + 1])
 			return (1);
 		i++;
 	}
