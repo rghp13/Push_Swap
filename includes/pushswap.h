@@ -6,13 +6,12 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:35:57 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/22 17:08:48 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/22 17:27:17 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
-# define MALLOC = NULL
 
 # include <stdlib.h>
 # include <stdio.h>
