@@ -6,7 +6,7 @@
 #    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/24 15:09:42 by rponsonn          #+#    #+#              #
-#    Updated: 2021/04/18 21:54:30 by rponsonn         ###   ########.fr        #
+#    Updated: 2021/09/22 15:43:55 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,10 @@ RM				=	rm -f
 CFLAGS			=	-Wall -Wextra -Werror
 
 .c.o:
-				${CC} ${CFLAGS} -I${PATH_HEAD} -c $< -o ${<:.c=.o}
+				@${CC} ${CFLAGS} -I${PATH_HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:		${OBJS}
-				ar -rcs ${NAME} ${OBJS}
+				@ar -rcs ${NAME} ${OBJS}
 all:			${NAME}
 
 clean:			

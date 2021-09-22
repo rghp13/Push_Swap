@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/09/20 19:21:10 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/22 15:37:57 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_check_string(char *str)
 	i = 1;
 	if (ft_strlen(str) < 1)
 		return (0);
-	if (!(str[0] == '-' || ft_isdigit(str[0])))
+	if (!(str[0] == '-' || str[0] == '+' || ft_isdigit(str[0])))
 		return (0);
 	while (str[i])
 	{

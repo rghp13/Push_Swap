@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
+#    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 03:44:54 by romain            #+#    #+#              #
-#    Updated: 2021/09/15 16:08:07 by romain           ###   ########.fr        #
+#    Updated: 2021/09/22 15:44:40 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,12 @@ DIR_OBJ		=	obj/
 
 SRCS		=	${DIR_SRC}ft_error.c ${DIR_SRC}ft_parse.c ${DIR_SRC}ft_push_swap.c ${DIR_SRC}ft_command.c \
 				${DIR_SRC}ft_pre_command.c ${DIR_SRC}ft_pre_command2.c ${DIR_SRC}ft_algorithm.c \
-				${DIR_SRC}ft_utilities.c ${DIR_SRC}ft_make_relative.c
+				${DIR_SRC}ft_utilities.c ${DIR_SRC}ft_make_relative.c ${DIR_SRC}ft_algorithm2.c \
+				${DIR_SRC}ft_utilities2.c
 
 OBJS		=	${SRCS:.c=.o}
 
-NAME		=	pushswap.a
+NAME		=	pushswap
 LIBFT_A		=	libft.a
 CC			=	gcc
 RM			=	rm -f
@@ -34,11 +35,12 @@ CFLAGS		=	-Wall -Wextra -Werror
 				@${CC} ${CFLAGS} -I${DIR_HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:		${OBJS}
+				@echo Compiling LIBFT
 				@make -C ${DIR_LIB}
+				@echo LIBFT compiled
 				@echo Copying ${LIBFT_A} to root
-				cp ${DIR_LIB}${LIBFT_A} ${NAME}
-				@echo Merging libft archive with pushswap
-				ar -rcs ${NAME} ${OBJS}
+				cp ${DIR_LIB}${LIBFT_A} ${LIBFT_A}
+				${CC} ${CFLAGS} -I${DIR_HEAD} -o ${NAME} ${OBJS} ${LIBFT_A}
 all:			${NAME}
 
 bonus:			${NAME}
@@ -51,7 +53,7 @@ test:
 				@cp ${DIR_HEAD}libft.h libft.h
 				@cp ${DIR_HEAD}pushswap.h ${DIR_SRC}pushswap.h
 				@cp ${DIR_HEAD}libft.h ${DIR_SRC}libft.h
-				gcc -g -I${DIR_HEAD} main.c ${SRCS} ${LIBFT_A}
+				gcc -g -I${DIR_HEAD} ${SRCS} ${LIBFT_A}
 				@rm -f pushswap.h libft.h ${DIR_SRC}pushswap.h ${DIR_SRC}libft.h
 
 clean:

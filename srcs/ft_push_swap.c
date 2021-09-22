@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/21 18:25:51 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/22 15:42:25 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,18 @@
 t_cont	*ft_init_cont(char **separated)
 {
 	t_cont	*container;
+	int		i;
 
+	i = 0;
 	container = NULL;
 	container = malloc(sizeof(t_cont));
 	if (container == NULL)
+	{
+		while (separated[i])
+			free(separated[i++]);
+		free(separated);
 		ft_exit();
+	}
 	container->separated = separated;
 	container->a = NULL;
 	container->b = NULL;
@@ -68,13 +75,14 @@ int	ft_pick_sort(t_cont *cont)
 	return (0);
 }
 
-int	ft_pushswap(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_cont	*cont;
 	char	**separated_input;
 
 	separated_input = NULL;
-	if (argc <= 1)
+	cont = NULL;
+	if (argc < 2)
 		ft_exit();
 	else if (argc == 2)
 	{
@@ -90,20 +98,4 @@ int	ft_pushswap(int argc, char **argv)
 	ft_pick_sort(cont);
 	ft_free(cont);
 	return (0);
-}
-
-t_cont	*ft_sep_handler(char **separated_input, char **argv)
-{
-	t_cont *cont;
-	int i;
-
-	i = 0;
-	separated_input = ft_split(argv[1], ' ');
-	if (separated_input == NULL)
-		ft_exit();
-	while (separated_input[i])
-		i++;
-	cont = ft_init(i + 1, separated_input);
-	ft_sep_parse(cont, separated_input);
-	return (cont);
 }
