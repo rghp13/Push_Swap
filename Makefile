@@ -6,7 +6,7 @@
 #    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 03:44:54 by romain            #+#    #+#              #
-#    Updated: 2021/09/22 15:44:40 by rponsonn         ###   ########.fr        #
+#    Updated: 2021/09/22 17:18:33 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS		=	${DIR_SRC}ft_error.c ${DIR_SRC}ft_parse.c ${DIR_SRC}ft_push_swap.c ${DIR
 
 OBJS		=	${SRCS:.c=.o}
 
-NAME		=	pushswap
+NAME		=	push_swap
 LIBFT_A		=	libft.a
 CC			=	gcc
 RM			=	rm -f

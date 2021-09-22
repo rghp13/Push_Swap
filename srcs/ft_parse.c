@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 20:02:09 by romain            #+#    #+#             */
-/*   Updated: 2021/09/22 15:37:57 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/22 17:01:53 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,19 @@ int	ft_check_duplicate(t_cont *cont)
 
 int	ft_parse(t_cont *cont, char **argv)
 {
-	int	i;
-	int	k;
+	int		i;
+	int		k;
+	long	hold;
 
 	i = 1;
 	k = cont->stack_max - 1;
 	ft_check_forbidden(cont, argv);
 	while (i <= cont->stack_max)
 	{
-		cont->a->stack[k] = ft_atoi(argv[i]);
+		hold = ft_atol(argv[i]);
+		if (hold > 0x7fffffff || hold < -2147483648)
+			ft_free_exit(cont);
+		cont->a->stack[k] = (int)hold;
 		i++;
 		cont->a->top += 1;
 		--k;

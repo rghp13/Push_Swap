@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:50:32 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/22 15:39:27 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/22 17:00:49 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,19 @@ int	ft_find_small(t_stack *stack)
 
 int	ft_sep_parse(t_cont *cont, char **separated)
 {
-	int	i;
-	int	k;
+	int		i;
+	int		k;
+	long	hold;
 
 	i = 0;
 	k = cont->stack_max - 1;
 	ft_sep_check_forbidden(cont, separated);
 	while (i < cont->stack_max)
 	{
-		cont->a->stack[k] = ft_atoi(separated[i]);
-		if (cont->a->stack[k] == 0 || cont->a->stack[k] == -1)
-		{
-			if (ft_strlen(separated[i]) > 3)
-				ft_free_exit(cont);
-		}
+		hold = ft_atol(separated[i]);
+		if (hold > 0x7fffffff || hold < -2147483648)
+			ft_free_exit(cont);
+		cont->a->stack[k] = (int)hold;
 		i++;
 		cont->a->top += 1;
 		--k;
