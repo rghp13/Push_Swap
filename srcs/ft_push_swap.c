@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:49:46 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/22 17:11:36 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/24 00:58:44 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 	separated_input = NULL;
 	cont = NULL;
 	if (argc < 2)
-		ft_exit();
+		exit(0);
 	else if (argc == 2)
 	{
 		cont = ft_sep_handler(separated_input, argv);

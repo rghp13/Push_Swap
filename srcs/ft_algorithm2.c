@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algorithm2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:12:15 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/22 15:28:14 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/24 00:58:37 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,6 @@ int	ft_check_bit(t_stack *a, unsigned int mask)
 
 int	ft_five_size(t_cont *cont)
 {
-	int	max;
-	int	*stack;
-
-	max = cont->stack_max;
-	stack = cont->a->stack;
 	ft_push_three(cont);
 	ft_three_size(cont->a, cont);
 	while (cont->b->top > 0)
